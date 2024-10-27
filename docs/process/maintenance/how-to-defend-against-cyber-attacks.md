@@ -131,7 +131,7 @@ connection_throttle_limit: 3
 
 ### 付费防御核心
 
-如果你非常有钱，你可以打开跨服端[核心选择](https://yizhan.wiki/NitWikit/Java/advance/cross-server/server-core-choose)，选择那些付费的跨服端核心，
+如果你非常有钱，你可以打开跨服端[核心选择](https://nitwikit.yizhan.wiki/Java/advance/cross-server/server-core-choose)，选择那些付费的跨服端核心，
 NullCordX 是一个较好的选择。
 
 但在没有想好的情况下，**不建议为反假人付费**。
@@ -192,23 +192,175 @@ NullCordX 是一个较好的选择。
 
 如果是 VPS，建议向 VPS 提供商咨询防御服务。
 
-#### 套 CloudFlare
+#### 使用Minecraft代理
 
-最稳定的办法还是白嫖 CloudFlare 的免费套餐，无限防御流量。
-
-但不太好的地方就是免费用户是没有办法使用国内节点的，所以国内访问会较慢。
-
-#### 使用第三方Minecraft代理
-
-例如 TCPShield 和 Infinity-Filter。
+例如 TCPShield,Cloudflare 和 MineKube
 
 包含专门针对于缓解 Minecraft 攻击的负载均衡代理，且能够有效隐藏服务器 IP 地址。
 
-缺点是似乎还没有任何一家这样的代理拥有国内服务器(延迟高)，且需要花费一点时间设置。
+缺点是似乎还没有任何一家这样的代理拥有国内服务器(延迟高)，且需要花费一点时间设置
 
-这些代理的免费套餐都具有一定的限制(例如限制玩家数或流量)，除非你升级套餐。
+那些在 CF 上 A(或AAAA,CNAME)过去到源站(可能配上 SRV)就是**自欺欺人,完全没用**,CF 压根不会代理这些端口和协议的流量,开小黄云也一样
 
-使用前请三思。
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs queryString="protect">
+<TabItem value="cf-tunnel" label="Cloudflare Tunnel">
+
+Cloudflare 的内网穿透 Tunnel,当高防也是疯了
+
+优点：
+
+- 免费，无需注册
+- 296 Tbps 高防,298 位置
+- 不限流
+- 支持 TCP,UDP,RDP,SSH,HTTP
+- SSH 提供 WebSSH,还可以通过 Access 管理
+- 自带内网穿透
+
+缺点：
+
+- 延迟较大(不可以优选)
+- 客户端需安装 mod 才能进入(仅限 TCP,UDP)
+
+</TabItem>
+<TabItem value="cf-spectrum" label="Cloudflare Spectrum">
+
+Cloudflare 用于 TCP,UDP 协议的防御,可惜价格太贵了(1$/GB抢钱)
+
+优点:
+
+- 296 Tbps 高防,298 位置
+- 支持 TCP,UDP,RDP,SSH,HTTP
+- 提供1个 AnyCast 独立 IPV4
+- SSH 提供 WebSSH,还可以通过 Access 管理
+
+缺点：
+
+- 价格太贵了(CF Pro + 流量计费)(CF Partner 计划早没了)
+- 延迟较大(不可以优选)
+
+价格多贵?
+
+Cloudflare Pro 25$/月(约合人民币178元,免费流量**5GB**),此后 1$/**GB**
+
+也就是说,1 TB 流量价格为 1044$,约合人民币7443元,还不算 CF Pro 订阅费用,真需要可以考虑 Papyrus
+
+</TabItem>
+<TabItem value="minekube" label="MineKube">
+
+MineKube 的免费保护,这个组织还有另一个有名作品 Gate
+
+个人感觉比 Cloudflare Tunnel 强很多(比 Cloudflare Spectrum 体验都好)
+
+优点：
+
+- 免费，无需注册
+- 自带高防
+- 不限流
+- 会提供一个免费域名和1个 AnyCast 独立 IPV4
+- 有 Dashboard,可以进行网络分流,管理,黑名单等操作
+- 自带内网穿透
+
+缺点：
+
+- 延迟非常大
+- 没 Geyser 支持
+
+[官网](https://connect.minekube.com/)
+
+</TabItem>
+<TabItem value="tcpshield" label="TCPShield">
+
+TCPShield 专业的 Minecraft 网络保护
+
+优点：
+
+- 提供免费套餐(1TB 免费流量)
+- **L7层保护(会校验流量合法性)**
+- 提供面板管理流量
+- 价格便宜
+
+缺点:
+
+- 延迟较大(启动 Asia Network 后会好很多)
+
+Asia Network(亚洲网络):
+
+- 提供新加坡和东京网络
+- 价格:0.01 $/GB(与其他流量分开计费,没有免费流量)(约合人民币7分)
+
+Geyser 支持需要 Premium 计划(100 $/月,堪比抢钱)
+
+Pro 计划(25$ 每月)(约合人民币178元):
+
+- 5 TB 免费流量
+- IP 防火墙,可过滤流量
+
+[官网](https://tcpshield.com/)
+
+</TabItem>
+<TabItem value="neoprotect" label="NeoProtect">
+
+优点：
+
+- 提供免费套餐(1TB 免费流量)
+- 提供面板管理流量
+- **L7层保护(反机器人)**
+
+缺点:
+
+- 延迟较大(only Free plan)
+
+Universal 计划 15 欧/每月(约 115 人民币)
+
+特点:
+
+- 3TB 流量
+- **Geyser 支持**(比 TCPShield 便宜)
+- 高级反机器人,高级分析,MOTD 缓存
+
+Neo 计划 30 欧/每月(约 230 人民币)
+
+特点:
+
+- 5TB 流量
+- 更多的节点(重点是**香港,日本,新加坡**节点)
+- IP 防火墙,支持黑白名单
+- 反 VPN
+
+还有一个计划纯抢钱,[官网](https://neoprotect.net/)
+
+</TabItem>
+<TabItem value="papyrus" label="Papyrus">
+
+没有免费套餐,但看在 Cloudflare Spectrum 的面子上还是写了
+
+VIP套餐(25 $ 每月,约合人民币177元):
+
+- 支持 Geyser
+- L7 过滤
+
+流量状况:
+
+- 无限流量: 仅提供纽约，法兰克福节点
+- Cloudflare Spectrum 流量: 流量数位置,但不是无限
+
+Enterprise套餐(250 $ 每月,约合人民币1778元):
+
+- Cloudflare Spectrum 无限流量
+
+:::tip
+
+说句好笑的,Papyrus 官网上说他们有 330 节点,但实际上,Cloudflare 去掉中国节点后只有 298 个节点,算上中国节点后才 330 个
+
+Cloudflare Spectrum 目前是没中国节点的
+
+:::
+
+</TabItem>
+</Tabs>
 
 #### 狂套 Frp
 
@@ -223,6 +375,8 @@ NullCordX 是一个较好的选择。
 <!--![](_images/angryopenfrp.jpg)  -->
 
 :::
+
+有着闲心还不如用上一条的免费防御,虽然速度慢一点
 
 #### 更换 IP
 
