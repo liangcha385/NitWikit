@@ -1,14 +1,51 @@
 ---
+title: TrMenu
 sidebar_position: 4
 ---
 
 # TrMenu
 
-一个功能强大的菜单插件，国人插件。
+![](https://gitee.com/postyizhan/images-hosting/releases/download/gif/animation.gif)
 
-![](_images/trm一定要看wiki呐.jpg)
+<a href="https://github.com/Dreeam-qwq/TrMenu/releases">
+  <img src="https://img.shields.io/github/v/release/Dreeam-qwq/TrMenu" class="stylish-image" alt="Release" />
+</a>
+<a href="https://github.com/Dreeam-qwq/TrMenu/releases">
+  <img src="https://img.shields.io/github/downloads/Dreeam-qwq/TrMenu/total" class="stylish-image" alt="Downloads" />
+</a>
+<a href="https://github.com/Dreeam-qwq/TrMenu">
+  <img src="https://img.shields.io/github/languages/code-size/Dreeam-qwq/TrMenu" class="stylish-image" alt="Code Size" />
+</a>
+<a href="https://github.com/Dreeam-qwq/TrMenu/blob/stable/v3/LICENSE.md">
+  <img src="https://img.shields.io/badge/license-TrMenu-lightgreen.svg" class="stylish-image" alt="License" />
+</a>
 
-## TrMenu v2
+```text
+一个功能强大的菜单插件，国人插件。目前由社区维护。
+```
+
+## 忽悠
+
+### 这个分支中有哪些新功能？
+
+- 支持 1.8.9 ~ 最新版本
+- 修复头颅显示问题
+- [国际化语言](https://github.com/Dreeam-qwq/TrMenu/pull/64)
+- 更多功能...
+
+Notice：维护这个分支完全是个人兴趣。
+
+### TrMenu v3 的优势
+
+- 极佳的速度和性能：不仅针对条件判断进行了优化，而且重构了虚拟背包的API
+- 大量的模块已经确认拥有更好的性能，同时提供了一个特别的方式来检测 TrMenu 的性能表现
+- 一如既往的强大功能：几乎所有功能都经过优化和保留，并添加了新功能。
+- 功能与脚本：统一并标准化了内联函数的使用，重构了 TrMenu 动作，并全面支持新的 kether 脚本语言。
+- 更多信息：请看 wiki
+
+## 链接
+
+### TrMenu v2
 
 早已停更，不推荐使用
 
@@ -20,7 +57,7 @@ sidebar_position: 4
 
 :::
 
-## TrMenu v3
+### TrMenu v3
 
 :::info
 
@@ -30,17 +67,55 @@ sidebar_position: 4
 
 `GitHub(推荐，社区维护)` https://github.com/Dreeam-qwq/TrMenu
 
-`文档(新)` https://hhhhhy.gitbook.io/trmenu-v3
-
-`文档(旧)` https://trmenu.trixey.cc/
-
-`如何支持1.8` https://hhhhhy.gitbook.io/trmenu-v3/appendix/v3-guide#datasource.yml-dui-yu-1.8-fu-wu-duan
-
-`vscode插件-trm语法提示` https://marketplace.visualstudio.com/items?itemName=hhhhhy.trmenu-helper
-
 :::
 
 交流群：325014486
+
+[如何支持1.8](https://hhhhhy.gitbook.io/trmenu-v3/appendix/v3-guide#datasource.yml-dui-yu-1.8-fu-wu-duan)
+
+## 文档
+
+- https://trmenu.trixey.cc
+
+旧文档，不推荐阅读
+
+- https://hhhhhy.gitbook.io/trmenu-v3
+
+新文档，推荐阅读，但可能需要挂梯子
+
+- https://mirror.8aka.org/https://hhhhhy.gitbook.io/trmenu-v3
+
+新文档的笨蛋镜像，不挂梯也可访问
+
+- https://bukkit.wiki/plugins/plugins/trmenu
+
+阔大帅的文档，拥有上方新文档的全部内容且访问速度快
+
+- https://wiki.ptms.ink/index.php?title=%E7%A4%BE%E5%8C%BA:TrMenu
+
+社区文档，或许比上方的文档更容易理解
+
+- https://docs.qq.com/aio/DWWV6SFVuWmlES1po
+
+TrMenu 入门学习文档
+
+![](_images/TrMenu/trm一定要看wiki呐.jpg)
+
+## vscode 插件
+
+与 TrMenu 或 [kether](/docs-java/process/maintenance/lang/kether/kether.md) 有关的 vscode 插件
+
+- [TrMenu-Helper](https://marketplace.visualstudio.com/items?itemName=hhhhhy.trmenu-helper)
+
+TrMenu 语法提示
+
+- [kether-snippet](https://marketplace.visualstudio.com/items?itemName=LiteCat.kether-snippet)
+
+kether 语法提示
+
+## bStats​
+
+[![](https://bstats.org/signatures/bukkit/TrMenu.svg)](https://bstats.org/plugin/bukkit/TrMenu/5742)
 
 ## 案例
 
@@ -155,7 +230,7 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 
 你需要安装 [CheckItem](../../Front-Plugin/PlaceHolderAPI/CheckItem.md)
 
-并 [开启give和remove](../../Front-Plugin/PlaceHolderAPI/CheckItem.md#启用give和remove) 和 [更改-boolean](../../Front-Plugin/PlaceHolderAPI/outline.md#更改-boolean)
+并 [开启give和remove](../../Front-Plugin/PlaceHolderAPI/CheckItem.md#启用give和remove) 和 [更改-boolean](../../Front-Plugin/PlaceHolderAPI/Q&A.md#更改-boolean)
 
 :::
 
@@ -164,7 +239,7 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 **知识点：**
 
 - TrMenu 文档熟读并背诵
-- [kether](/docs-java/advance/kether/basic.md)
+- [kether](/docs-java/process/maintenance/lang/kether/basic.md)
 - [CheckItem](../../Front-Plugin/PlaceHolderAPI/CheckItem.md)
 
 ```yaml
@@ -220,7 +295,7 @@ https://hhhhhy.gitbook.io/trmenu-v3/usage/shortcuts
 **知识点：**
 
 - TrMenu 文档熟读并背诵
-- [kether](/docs-java/advance/kether/basic.md)
+- [kether](/docs-java/process/maintenance/lang/kether/basic.md)
 - [CheckItem](../../Front-Plugin/PlaceHolderAPI/CheckItem.md)
 - [妙妙写法](#妙妙写法)
 - [\{condition=\}条件](https://hhhhhy.gitbook.io/trmenu-v3/menu/action/option#tiao-jian)

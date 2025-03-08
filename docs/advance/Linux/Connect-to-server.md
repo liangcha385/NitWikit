@@ -11,7 +11,7 @@ Linux 系统上有一个工具被业界广泛使用，它就是 `ssh`。它虽�
 ## 开启ssh服务
 
 为了让客户能顺利连接服务器，云服务器的sshd服务一般默认开启。如果你使用的是家里云，或者云服务器的sshd服务确实没有开启(比如你是只能通过服务商提供的VNC或者第三方远控软件连接的服务器，无法使用ssh)，那么你可能需要先开启sshd服务才能连接到服务器。
-在主流的使用 Systemd 的Linux发行版中，执行`systemctl start sshd`命令即可开启 sshd 服务，如果这些命令都报错，证明 sshd 服务存在问题，你可以把报错复制粘贴到搜索引擎上查询怎么修复这个问题。
+在主流的使用 Systemd 的Linux发行版中，执行`systemctl enable --now sshd`命令即可开启 sshd 服务，如果这些命令都报错，证明 sshd 服务存在问题，你可以把报错复制粘贴到搜索引擎上查询怎么修复这个问题。
 开启 sshd 服务后，你就可以连接到这台服务器了。
 
 成功开启ssh服务后，如果要从公网连接，你还需要把ssh服务的端口`22`开放到公网。开放的方法与开放 Windows 的远程桌面端口的方式完全相同，但是协议只需要 TCP 即可。
@@ -44,8 +44,8 @@ Linux 系统上有一个工具被业界广泛使用，它就是 `ssh`。它虽�
 ssh <username>@<address> [-p port]
 ```
 
-如何要指定端口，你需要指定端口参数。在一些操作系统上这个参数是`-p`，例如`ssh root@yizhan.wiki -p 48291`，有一些工具上则是直接在后面输入端口。
-例如 Xshell 是`ssh root@yizhan.wiki 48291`。
+如何要指定端口，你需要指定端口参数。在一些操作系统上这个参数是`-p`，例如`ssh root@8aka.org -p 48291`，有一些工具上则是直接在后面输入端口。
+例如 Xshell 是`ssh root@8aka.org 48291`。
 你需要根据不同的工具的使用方式来确定ssh的命令格式。比如，你可以仅执行 `ssh` 命令(等价于 `ssh --help`)，然后让 ssh 工具提示你如何使用当前工具的这个命令，如果需要更详细的说明可以输入命令 `man ssh`
 
 在输入完这行命令后，服务器通常会要求你输入该用户的密码。
@@ -114,7 +114,7 @@ FinalShell是一体化的的服务器，网络管理软件，不仅是ssh客户�
 他称自己是 业界最强大的SSH客户机
 
   </TabItem>
-  <TabItem value="termux" lable="安卓手机(termux)">
+  <TabItem value="termux" label="安卓手机(termux)">
 
 你需要安装 termux 这个软件。你可以去 Google Play 下载，也可以去[它的开源地址](https://github.com/termux/termux-app)下载。
 
@@ -124,7 +124,7 @@ FinalShell是一体化的的服务器，网络管理软件，不仅是ssh客户�
 
   </TabItem>
 
-  <TabItem value="zsh" lable="macOS(zsh)">
+  <TabItem value="zsh" label="macOS(zsh)">
 
 macOS 内置 ssh 命令，我们可以用终端来执行它。要打开macos上的终端，可以使用以下方式：
 
@@ -138,4 +138,5 @@ macOS 内置 ssh 命令，我们可以用终端来执行它。要打开macos上�
   </TabItem>
 </Tabs>
 
-除了ssh之外，还有一种远程桌面叫 VNC。VNC 是一种远程桌面协议，在 Linux 上的使用尤其广泛，也可以用作包括 Windows 在内的其他系统。由于 VNC 没有业界采用极其广泛的具体软件，这里不介绍广泛使用的软件，具体要使用可以上网搜索相关的软件和教程。
+除了用 ssh 连接服务器之外，还有可以使用远程桌面。比如 VNC 和 RDP。服务器上一般不配备桌面环境和远程桌面环境，除非是非常需要，否则不建议在服务器上使用远程桌面。
+关于桌面环境和远程桌面服务器的搭建，本文档不给予详细阐释，需要者可自行上网搜索相关内容。

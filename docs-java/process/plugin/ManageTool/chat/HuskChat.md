@@ -5,11 +5,15 @@ sidebar_position: 2
 
 # HuskChat
 
+:::danger
+根据 SpigotMC 和 GitHub 上的官方消息，此插件已停止开发。
+:::
+
 :::info
 
 `SpigotMC` https://www.spigotmc.org/resources/.94496
 
-`PaperMC` https://hangar.papermc.io/William278/HuskChat
+`Hangar` https://hangar.papermc.io/William278/HuskChat
 
 `Modrinth` https://modrinth.com/plugin/huskchat
 
@@ -18,5 +22,3 @@ sidebar_position: 2
 `文档` https://william278.net/docs/HuskChat
 
 :::
-
-这人的插件都挺不错的

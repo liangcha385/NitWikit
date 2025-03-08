@@ -30,9 +30,7 @@ java -Xlog:gc+init -XX:+UseTransparentHugePages -Xmx1g -version
 
 如果看到 `Large Page Support: Enabled (Transparent)` ，表示你的系统支持透明大页
 
-但是如果你依然不支持或者想要追求极致性能，可以去百度搜索当前的系统如何开启大页，
-
-这里就不再过多的赘述了。(LargePages 对服务器提升相当巨大，在我的电脑上，它提升了 50%的性能)
+但是如果你依然不支持或者想要追求极致性能，可以查看 [内核优化](../kernel.md)
 
 如果支持 LargePages ，加上此参数
 
@@ -40,10 +38,10 @@ java -Xlog:gc+init -XX:+UseTransparentHugePages -Xmx1g -version
 -XX:+UseLargePages  -XX:LargePageSizeInBytes=2m
 ```
 
-如果支持 TransparentHugePages (不要把两个都加上，优先 LargePages)，加上此参数
+如果支持 TransparentHugePages，加上此参数
 
 ```shell
--XX:+UseTransparentHugePages -XX:LargePageSizeInBytes=2m
+-XX:+UseTransparentHugePages
 ```
 
 :::tip
@@ -62,7 +60,9 @@ java -Xlog:gc+init -XX:+UseTransparentHugePages -Xmx1g -version
 
 ## 下载源加速
 
-默认的 SpigotLibraryLoader 下载源在国内访问很慢，如果你使用的是 Leaf，你可以添加参数使用国内下载源：
+默认的 SpigotLibraryLoader 下载源或插件使用 PaperLibraryLoader 添加的 Maven 中心仓库下载源在国内访问很慢，
+
+如果你使用的是 Leaf，你可以添加参数使用国内下载源：
 
 ```shell
 -DLeaf.library-download-repo=https://maven.aliyun.com/repository/public
@@ -84,21 +84,28 @@ java -Xlog:gc+init -XX:+UseTransparentHugePages -Xmx1g -version
 -Dgale.log.warning.root=false -Dgale.log.warning.offline.mode=false
 ```
 
-## 更快的安全随机数发生
+## 更快的安全随机数生成器
+
+(仅适合 Linux 和 MacOS 系统, 在 Windows 上无效)
+(原版 Minecraft 仅在个人信息公钥签名中使用到 SecureRandom)
 
 ```shell
 -Djava.security.egd=file:/dev/urandom
 ```
 
-## 异步日志
+## 异步输出 JVM 调试日志
+
+(仅适合 Java17 及以上)
 
 ```shell
  -Xlog:async
 ```
 
-异步日志记录可能会导致日志记录的顺序不确定
+异步输出 Java 统一日志系统(Unified Logging)打印的 JVM 调试信息
 
-### 更长的 KeepAlive 时间
+仅在使用 -Xlog:gc 等 flag 开启 JVM 调试信息打印的时候发挥作用
+
+## 更长的 KeepAlive 时间
 
 (仅适合 Paper 和 Paper Fork)
 
@@ -108,7 +115,7 @@ java -Xlog:gc+init -XX:+UseTransparentHugePages -Xmx1g -version
 
 如果你的网络不好，可以适当延长 keepalive 时间，打开[alternate-keepalive](/docs-java/process/maintenance/optimize/go.md#心跳连接)
 
-### 禁用文件夹遍历和符号链接验证
+## 禁用文件夹遍历和符号链接验证
 
 (仅适合 Paper 和 Paper Fork)
 

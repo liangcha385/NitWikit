@@ -34,6 +34,10 @@ https://github.com/tvvocold/How-To-Ask-Questions-The-Smart-Way)这篇小作文
 
 **`不正确提供 log 或不提供 log`**
 
+- **自己造词**，只有你自己能理解，以为别人明白。
+
+**`我玩家怎么假登陆了？天权系统怎么做？`**
+
 - 以下这些情况，应该去天桥的老大爷找你算算命，因为没有有效的 log 没人能知道你遇到的问题。
 - 在 **服务器** 问题中提供 **客户端** log。
 - **不完整** 的 log，甚至 **不提供** log。
@@ -44,7 +48,7 @@ https://github.com/tvvocold/How-To-Ask-Questions-The-Smart-Way)这篇小作文
 
 ![](_images/不要截图这个啊.png)
 
-这段话是告诉你去控制台看报错，你把这段话截图给群发干什么？群友是控制台？
+这段话是告诉你去控制台看报错，你把这段话截图给群友干什么？群友是控制台？
 
 :::
 
@@ -65,7 +69,7 @@ https://github.com/tvvocold/How-To-Ask-Questions-The-Smart-Way)这篇小作文
 
 - 开门见山：`服务器报错是这个 C++ Exception: std::optional<class std::system_error> 是啥情况`
 - 发言不友好：`你不知道可以不说话，别在这浪费我时间`
-- 斥责他人：`你是不不会写插件啊，这插件怎么能开服就报错呢`
+- 斥责他人：`你是不是不会写插件啊，这插件怎么能开服就报错呢`
 
 <!--markdownlint-disable ol-prefix-->
 
@@ -132,7 +136,7 @@ Wiki 就是让你解决常见问题的，不看这玩意儿就在那瞎问只会
 
 #### 笨蛋脚本
 
-使用此[脚本](https://github.com/lilingfengdev/NitWiki-Script/releases/download/windows-latest/update-log.exe)，
+使用此[脚本](https://script.8aka.org/update-log)，
 会将日志自动上传到 `https://mclo.gs` (默认上传的日志是 `logs/latest.log`)
 
 #### 如何上传
@@ -141,13 +145,28 @@ Wiki 就是让你解决常见问题的，不看这玩意儿就在那瞎问只会
 
 :::tip
 
-推荐一个网站 [Mclogs](https://mclo.gs/)，它允许你很方便地上传日志。
+推荐一个网站 [8aka Mclogs](https://log.8aka.org/)，它允许你很方便地上传日志。
 
 :::
 
 你需要明白你面对的是群友而不是道友，没有人可以在没有日志的情况下帮你解决问题，
 
 如果你遇到的是大佬还可以给你算一卦。
+
+<details>
+  <summary>如何使用 8aka Mclogs </summary>
+
+> https://log.8aka.org
+
+![](_images/屏幕截图%202025-02-07%20182759.png)
+
+服务器 log 文件在服务端根目录的 logs 文件夹，一般上传 latest.log (服务端最新的日志)即可
+
+![](_images/屏幕截图%202025-02-07%20182930.png)
+
+把这个链接复制粘贴发给大佬
+
+</details>
 
 <details>
   <summary>如何使用 Mclogs </summary>
@@ -201,6 +220,10 @@ Wiki 就是让你解决常见问题的，不看这玩意儿就在那瞎问只会
 :::
 
 **经典如何提问: https://settingdust.gitbook.io/stop-ask-questions-the-stupid-ways/**
+
+<a href="https://www.8aka.org/qq">
+  <img src="https://raw.githubusercontent.com/8aka-Team/NitWikit/refs/heads/main/docs/_images/qqgroupshield.svg" alt="QQ群"></img>
+</a>
 
 ### 经典老图
 

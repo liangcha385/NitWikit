@@ -14,7 +14,7 @@ slug: /optimize/jvm
 
 ```mermaid
 flowchart TD
-    A[选择] 
+    A[选择]
     A --> Java8
     A --> Java11
     A --> Java21
@@ -30,7 +30,7 @@ flowchart TD
     Linux --> D[内存充足]
     D --> 好的兼容性
     好的兼容性 -->|需要| C
-    好的兼容性 -->|不需要| E[Azul Zing]
+    好的兼容性 -->|不需要,需要有实力| E[Azul Zing]
 ```
 
 :::tip Zulu的性能
@@ -45,7 +45,7 @@ flowchart TD
 
 :::tip 兼容性
 
-根据我们的测试，GraalVM，Dragonwell，Zulu 目前都没有被报告过不兼容
+根据我们的测试,GraalVM,Dragonwell,Zulu 目前都没有被报告过不兼容
 
 Zing 与 LuckPerms 以及一些特殊插件会有一点不兼容
 
@@ -74,25 +74,25 @@ Dragonwell 分为  Standard Edition 和 Extended Edition，推荐下载 Extended
 
 GraalVM 分为 Community Edition(CE) 和 Enterprise Edition(EE)，除非你服务器大到会被 Oracle 找上门，不然请选择 Enterprise Edition
 
+推荐下载最新版,也就是 Java 23,Java 24 EA 添加了对 ZGC 的支持,同样推荐下载
+
 - [下载 EE](https://www.graalvm.org/downloads/)
 - [下载 CE](https://github.com/graalvm/graalvm-ce-builds/releases/)
+- [下载 EA](https://github.com/graalvm/oracle-graalvm-ea-builds/releases)
 - [下载镜像](https://d.injdk.cn/download/graalvm)
 
 :::tip
 
-Oracle 官网同样提供 GraalVM，但是上面的 GraalVM EE 包含了企业版套件，这些MC根本用不到，只需要企业版编译器就可以了
+Oracle 官网同样提供 GraalVM,但是上面的 GraalVM EE 包含了企业版套件,这些MC根本用不到,只需要企业版编译器就可以了
 
 :::
 
 </TabItem>
 <TabItem value="zing" label="Azul Zing">
 
-Azul Zing 不能直接被下载，需要填写试用申请表，但我们通过神秘手段搞到了安装包
+Azul Zing 不能直接被下载，需要填写试用申请表，可以直接乱填
 
-- [RPM](https://cdn.azul.com/zing-zvm/ZVM24.07.0.0/zing24.07.0.0-3-jdk21.0.3.0.101-linux.x86_64.rpm)
-- [TAR.GZ](https://cdn.azul.com/zing-zvm/ZVM24.07.0.0/zing24.07.0.0-3-jdk21.0.3.0.101-linux_x64.tar.gz)
-- [DEB](https://cdn.azul.com/zing-zvm/ZVM24.07.0.0/zing24.07.0.0-3-jdk21.0.3.0.101-linux_amd64.deb)
-- [官网](https://www.azul.com/downloads/#prime)
+[官网](https://www.azul.com/downloads/#prime)
 
 </TabItem>
 <TabItem value="zulu" label="Azul Zulu">
@@ -121,16 +121,13 @@ OpenJ9 有认证版和非认证版，主要是因为和 OpenJ9 的关系和操�
 
 ```mermaid
 flowchart TD
-    A[选择] 
-    A --> B[机器配置足够，起步4h8g，推荐8h8g]
-    A --> 机器配置不达标
-    B --> C[Java 21+，或Dragonwell 11]
-    B --> 其他
-    C --> ZGC
-    其他 --> G1
-    机器配置不达标 --> G1
+    A[选择]
+    A --> B[机器配置足够,起步4h8g,推荐8h8g]
+    A --> 机器配置不达标 --> G1
+    B --> C[Java 21+,或Dragonwell 11] --> ZGC
+    B --> 其他 --> G1
 ```
 
-ZGC 的无停顿可以给玩家带来更好的体验，并且更充分的利用多核
+ZGC 的无停顿可以给玩家带来更好的体验，并且更充分的利用多核。
 
 对于 GC 细节性的优化请阅读每个Java的优化指南

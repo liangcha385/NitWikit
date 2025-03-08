@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: 创世神 - WorldEdit
 ---
 
@@ -9,7 +9,7 @@ sidebar_label: 创世神 - WorldEdit
 
 `Bukkit` https://dev.bukkit.org/projects/multiverse-core
 
-`PaperMC` https://hangar.papermc.io/EngineHub/WorldEdit
+`Hangar` https://hangar.papermc.io/EngineHub/WorldEdit
 
 `Modrinth` https://modrinth.com/plugin/worldedit
 
@@ -19,7 +19,7 @@ sidebar_label: 创世神 - WorldEdit
 
 `文档(英文)` https://worldedit.enginehub.org/en/latest/index.html
 
-`文档(中文)` https://snowcutieowo.github.io/WorldEdit/#/
+`文档(中文)` https://snowcutieowo.github.io/WorldEdit
 
 `插件百科` https://mineplugin.org/WorldEdit
 

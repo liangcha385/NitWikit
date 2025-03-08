@@ -5,7 +5,7 @@ sidebar_position: 4
 
 <!--markdownlint-disable no-duplicate-heading-->
 
-# 调服务端配置
+## 调服务端配置
 
 没有适用于所有服务器的设置。你应该理解每个配置选项，并根据服务器的最佳参数与服务器硬件、玩家数量和服务器性质等调整参数。
 
@@ -17,15 +17,27 @@ sidebar_position: 4
 
 适用于 Paper 版本 1.20 +
 
-# 更简单的
+## 更简单的
 
-自动优化脚本，[下载](https://dl.yizhan.wiki/windows-latest/auto-optimize.exe)，在服务器根目录执行，目前支持CraftBukkit，Spigot，Paper，PufferFish，Purpur，Gale，Leaf
+自动优化脚本，[下载](https://script.8aka.org/auto-optimize)
+，在服务器根目录执行，目前支持CraftBukkit，Spigot，Paper，PufferFish，Purpur，Gale，Leaf
 
-# 网络优化
+:::tip
+
+以下教程的优化项并不全面(比如没有 Leaf 配置项),如果你希望了解所有的优化配置项
+
+你可以看看**笨蛋脚本的源代码**或**服务器核心的文档**
+
+Leaf 和 Gale 的优化配置项请前往: [Leaf 官方文档](https://docs.leafmc.one/zh/reference/config/),CatServer
+可以看[这个帖子](https://bbs.mcmod.cn/thread-10697-1-1.html),Luminol 可以看[这篇帖子](https://www.lanxing.vip/1.html)
+
+:::
+
+## 网络优化
 
 网络优化主要目的是解决服务器上行带宽占用导致的玩家 **Ping**(即网络延迟)过高导致的糟糕游戏体验。
 
-## 降低服务器视野距离
+### 降低服务器视野距离
 
 :::warning
 
@@ -33,7 +45,7 @@ sidebar_position: 4
 
 :::
 
-### 手动调整
+#### 手动调整
 
 在 `spigot.yml` 或 `server.properties` 中可以设置服务器的视野距离，其中 `spigot.yml` 会覆盖 `server.properties` 的值。
 
@@ -43,9 +55,10 @@ view-distance: 8  #视野距离为 8 chunks
 
 如果你使用的默认 10 chunks 的视野距离，可能对于带宽来说有一定的压力，可以酌情减少，
 
-### 自动调整
+#### 自动调整
 
-安装 [View Distance Tweaks](https://www.spigotmc.org/resources/view-distance-tweaks.75164/) 实现自动调整视野距离使得玩家增多时自动减少视野，玩家减少时自动增加视野。
+安装 [View Distance Tweaks](https://www.spigotmc.org/resources/view-distance-tweaks.75164/)
+实现自动调整视野距离使得玩家增多时自动减少视野，玩家减少时自动增加视野。
 
 ## 降低区块加载速度
 
@@ -55,9 +68,9 @@ view-distance: 8  #视野距离为 8 chunks
 chunk-loading-basic:
   #注：以下的单位均为 chunks / seconds
   player-max-chunk-generate-rate: -1.0
-  #为每个玩家生成分块的最大速率，设置为-1 则禁用。
+  #为每个玩家生成区块的最大速率，设置为-1 则禁用。
   player-max-chunk-load-rate: 100
-  #任何单个玩家加载块的最大速率，设置为-1 则禁用。
+  #任何单个玩家加载区块的最大速率，设置为-1 则禁用。
   player-max-chunk-send-rate: 75
   #服务器发送给单个玩家的最大速率。设置为-1 则禁用。
 ```
@@ -70,7 +83,8 @@ chunk-loading-basic:
 
 Minecraft 服务端会将每个实体的行为实时发送给附近的玩家客户端，这个包通常来说占用是很少的，但是大量玩家处于实体密集型区域时将出现大量带宽占用。
 
-bukkit.yml 以及 config/paper-world-default.yml 中对于 spawn-limits 做了限制(若二者均有值时取 Paper 的，若 Paper 中为 -1 时取 Bukkit)
+bukkit.yml 以及 config/paper-world-default.yml 中对于 spawn-limits 做了限制(若二者均有值时取 Paper 的，若 Paper 中为 -1
+时取 Bukkit)
 
 ```yaml
 spawn-limits:
@@ -97,7 +111,8 @@ spawn-limits:
 
 ```
 
-高版本的 config/paper-world-default.yml 中将 `animals` 改为了 `creature`，将 `water-animals` 改为了 `water-creature`，可参考这份配置文件：
+高版本的 config/paper-world-default.yml 中将 `animals` 改为了 `creature`，将 `water-animals` 改为了 `water-creature`
+，可参考这份配置文件：
 
 ```yaml
 spawn-limits:
@@ -197,7 +212,8 @@ simulate-distance: 8
 
 ##### 自动调整
 
-安装 [View Distance Tweaks](https://www.spigotmc.org/resources/view-distance-tweaks.75164/) 实现自动调整视野距离使得玩家增多时自动减少视野，玩家减少时自动增加视野。
+安装 [View Distance Tweaks](https://www.spigotmc.org/resources/view-distance-tweaks.75164/)
+实现自动调整视野距离使得玩家增多时自动减少视野，玩家减少时自动增加视野。
 
 ### 区块生成和加载
 
@@ -269,11 +285,11 @@ chunks:
 
 在玩家频繁传送或加载的区域，可以考虑让该区域永久加载。这可以减轻服务器不小的负担。
 
-| 推荐值 | 服务器类型                         |
-| ------ | ---------------------------------- |
-| 5s     | 开荒期、玩家会大范围跑图时         |
-| 10s    | 普通服务器                         |
-| >15s   | 服务器玩法决定玩家不会大范围移动时 |
+| 推荐值  | 服务器类型             |
+|------|-------------------|
+| 5s   | 开荒期、玩家会大范围跑图时     |
+| 10s  | 普通服务器             |
+| >15s | 服务器玩法决定玩家不会大范围移动时 |
 
 ### 世界保存
 
@@ -295,12 +311,12 @@ max-auto-save-chunks-per-tick: 24
 
 使用更高的保存速度是有利于降低丢失区块数据的可能性的。
 
-| 推荐值 | 服务器人数        |
-| ------ | ----------------- |
-| 4      | 长期不到 10 人    |
-| 8      | 20 人左右(默认) |
-| 12     | 30 人左右         |
-| >24    | 长期大于 50       |
+| 推荐值 | 服务器人数      |
+|-----|------------|
+| 4   | 长期不到 10 人  |
+| 8   | 20 人左右(默认) |
+| 12  | 30 人左右     |
+| >24 | 长期大于 50    |
 
 #### entity-per-chunk-save-limit
 
@@ -361,13 +377,13 @@ chunks:
 
 ```yaml
 推荐值:
-      loot-tables: true
-      villager-trade: true
+  loot-tables: true
+  villager-trade: true
 ```
 
 由于这些未探索的结构通常位于尚未生成的区块中，这可能会滞后服务器。
 
- `villager-trade` 影响村民交易的地图。
+`villager-trade` 影响村民交易的地图。
 
 `loot-tables` 影响任何生成战利品的容器，如宝箱等。
 
@@ -421,15 +437,15 @@ spawn-limits:
 
 下表推荐了三种不同情况的推荐值，请结合服务器卡顿程度和玩法选择合适的值：
 
-| 生物类型                   | 推荐最小值 | 推荐值 | 推荐最大值 |
-| -------------------------- | ---------- | ------ | ---------- |
-| monster                    | 18         | 30     | 45         |
-| animal                     | 5          | 8      | 10         |
-| water-animals              | 2          | 3      | 5          |
-| water-ambient              | 2          | 3      | 5          |
-| water-underground-creature | 3          | 4      | 5          |
-| axolotls                   | 3          | 4      | 5          |
-| ambient                    | 0          | 1      | 1          |
+| 生物类型                       | 推荐最小值 | 推荐值 | 推荐最大值 |
+|----------------------------|-------|-----|-------|
+| monster                    | 18    | 30  | 45    |
+| animal                     | 5     | 8   | 10    |
+| water-animals              | 2     | 3   | 5     |
+| water-ambient              | 2     | 3   | 5     |
+| water-underground-creature | 3     | 4   | 5     |
+| axolotls                   | 3     | 4   | 5     |
+| ambient                    | 0     | 1   | 1     |
 
 #### mob-spawn-range
 
@@ -445,13 +461,13 @@ mob-spawn-range: 8
 
 推荐值：
 
-| `spawn-limit` 值 | 对应 `mob-spawn-range`推荐值 | 实际生物量  |
-| :--------------: | :--------------------------: | :---------: |
-|    70 (默认)     |           8(默认)           | 100% (默认) |
-|        56        |             6-7              |     90%     |
-|        42        |             5-6              |     78%     |
-|        28        |             4-5              |     65%     |
-|        14        |             3-4              |     48%     |
+| `spawn-limit` 值 | 对应 `mob-spawn-range`推荐值 |   实际生物量   |
+|:---------------:|:-----------------------:|:---------:|
+|     70 (默认)     |          8(默认)          | 100% (默认) |
+|       56        |           6-7           |    90%    |
+|       42        |           5-6           |    78%    |
+|       28        |           4-5           |    65%    |
+|       14        |           3-4           |    48%    |
 
 :::tip
 
@@ -482,13 +498,13 @@ ticks-per:
 
 ```yaml
 推荐值:
-    monster-spawns: 9
-    animal-spawns: 399
-    water-spawns: 199
-    water-ambient-spawns: 399
-    water-underground-creature-spawns: 399
-    axolotl-spawns: 399
-    ambient-spawns: 999
+  monster-spawns: 9
+  animal-spawns: 399
+  water-spawns: 199
+  water-ambient-spawns: 399
+  water-underground-creature-spawns: 399
+  axolotl-spawns: 399
+  ambient-spawns: 999
 ```
 
 :::tip
@@ -509,35 +525,36 @@ ticks-per:
 
 ```yaml
 ambient:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 axolotls:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 creature:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 misc:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 monster:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 underground_water_creature:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 water_ambient:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 water_creature:
-    hard: 72
-    soft: 30
+  hard: 72
+  soft: 30
 ```
 
 此项可以调整各种生物的消失范围(方块为单位)。降低这些值可以更快地清除远离玩家的生物。
 你应该将 soft 软距离设置为约`30`，然后将 hard 硬性距离设置的稍微大于 simulation-distance，这样当玩家刚刚跑出区块时，生物不会立即消失
 (你可以一并调整 [paper-world configuration] 中的`delay-chunk-unloads-by`)。当一个生物离开了 hard 距离，该生物会立刻消失。
-当一个生物处于 soft 和 hard 距离之间，该生物将有概率消失。 你的 hard 距离应该大于 soft 距离。你应该根据模拟距离调整此项：`(simulation-distance * 16) + 8`。 此项还可能造成玩家经过后，区块不卸载的情况(因为生物还没消失)。
+当一个生物处于 soft 和 hard 距离之间，该生物将有概率消失。 你的 hard 距离应该大于 soft 距离。你应该根据模拟距离调整此项：
+`(simulation-distance * 16) + 8`。 此项还可能造成玩家经过后，区块不卸载的情况(因为生物还没消失)。
 
 ### 碰撞箱
 
@@ -551,7 +568,8 @@ water_creature:
 
 :::
 
-覆盖 [spigot.yml] 中的同名项。它让你决定一个实体可以同时处理多少次碰撞。`0`将导致无法推动其他实体，包括玩家。`2`应该可以处理大部分情况。 值得注意的是，这将会破坏 maxEntityCramming gamerule 也就是生物堆叠窒息。
+覆盖 [spigot.yml] 中的同名项。它让你决定一个实体可以同时处理多少次碰撞。`0`将导致无法推动其他实体，包括玩家。`2`应该可以处理大部分情况。
+值得注意的是，这将会破坏 maxEntityCramming gamerule 也就是生物堆叠窒息。
 
 #### fix-climbing-bypassing-cramming-rule
 
@@ -569,7 +587,8 @@ water_creature:
 
 `推荐值: true`
 
-此项将检查速率限制为伤害超时来优化窒息检查(检查生物是否在方块内以及它们是否应该受到窒息伤害)。除非你是生电玩家，能够使用精确计时窒息杀死实体的时间，否则这种优化应该是不可能注意到的。
+此项将检查速率限制为伤害超时来优化窒息检查(检查生物是否在方块内以及它们是否应该受到窒息伤害)
+。除非你是生电玩家，能够使用精确计时窒息杀死实体的时间，否则这种优化应该是不可能注意到的。
 
 ### 实体 AI
 
@@ -585,14 +604,14 @@ water_creature:
 
 ```yaml
 推荐值:
-    entity-activation-range:
-      animals: 16
-      monsters: 24
-      raiders: 48
-      misc: 8
-      water: 8
-      villagers: 16
-      flying-monsters: 48
+  entity-activation-range:
+    animals: 16
+    monsters: 24
+    raiders: 48
+    misc: 8
+    water: 8
+    villagers: 16
+    flying-monsters: 48
 ```
 
 ##### inactive-goal-selector-throttle
@@ -619,7 +638,7 @@ dab:
   start-distance: 12
   max-tick-freq: 30
   activation-dist-mod: 7
-  blacklisted-entities: []
+  blacklisted-entities: [ ]
 ```
 
 `dab` 是什么？这是一个生物 AI 控制算法，以梯度降低远处生物的 AI 运行，因为远处生物相对不重要。
@@ -634,11 +653,11 @@ dab:
 
 不同情况下的推荐值：
 
-| 选项                | 牺牲 AI 换取性能 | 推荐 | 更接近原版 |
-| ------------------- | ---------------- | ---- | ---------- |
-| start-distance      | 8 - 10           | 12   | 20         |
-| max-tick-freq       | 30 - 40          | 20   | 10         |
-| activation-dist-mod | 7 - 8            | 7    | 6 -7       |
+| 选项                  | 牺牲 AI 换取性能 | 推荐 | 更接近原版 |
+|---------------------|------------|----|-------|
+| start-distance      | 8 - 10     | 12 | 20    |
+| max-tick-freq       | 30 - 40    | 20 | 10    |
+| activation-dist-mod | 7 - 8      | 7  | 6 -7  |
 
 #### 刷怪笼相关
 
@@ -757,16 +776,16 @@ nearest-bed-sensor: 16
 
 ```yaml
 behavior:
-    villager:
-        validatenearbypoi: 60
-        acquirepoi: 120
+  villager:
+    validatenearbypoi: 60
+    acquirepoi: 120
 sensor:
-    villager:
-        secondarypoisensor: 80
-        nearestbedsensor: 80
-        villagerbabiessensor: 40
-        playersensor: 40
-        nearestlivingentitysensor: 40
+  villager:
+    secondarypoisensor: 80
+    nearestbedsensor: 80
+    villagerbabiessensor: 40
+    playersensor: 40
+    nearestlivingentitysensor: 40
 ```
 
 > 当 [Pufferfish's DAB](#dab) 启用时，不建议修改该项任何默认值。
@@ -799,33 +818,33 @@ sensor:
 
 ```yaml
 enabled: true
-    items:
-        cobblestone: 300
-        netherrack: 300
-        sand: 300
-        red_sand: 300
-        gravel: 300
-        dirt: 300
-        short_grass: 300
-        pumpkin: 300
-        melon_slice: 300
-        kelp: 300
-        bamboo: 300
-        sugar_cane: 300
-        twisting_vines: 300
-        weeping_vines: 300
-        oak_leaves: 300
-        spruce_leaves: 300
-        birch_leaves: 300
-        jungle_leaves: 300
-        acacia_leaves: 300
-        dark_oak_leaves: 300
-        mangrove_leaves: 300
-        cactus: 300
-        diorite: 300
-        granite: 300
-        andesite: 300
-        scaffolding: 600
+items:
+  cobblestone: 300
+  netherrack: 300
+  sand: 300
+  red_sand: 300
+  gravel: 300
+  dirt: 300
+  short_grass: 300
+  pumpkin: 300
+  melon_slice: 300
+  kelp: 300
+  bamboo: 300
+  sugar_cane: 300
+  twisting_vines: 300
+  weeping_vines: 300
+  oak_leaves: 300
+  spruce_leaves: 300
+  birch_leaves: 300
+  jungle_leaves: 300
+  acacia_leaves: 300
+  dark_oak_leaves: 300
+  mangrove_leaves: 300
+  cactus: 300
+  diorite: 300
+  granite: 300
+  andesite: 300
+  scaffolding: 600
 ```
 
 此项可以设置指定物品消失的时间(tick 为单位)， 建议用此项替代扫地姬或 `merge-radius` 来提高性能。
@@ -937,26 +956,27 @@ enabled: true
 
 ```yaml
 ticks-per:
-    hopper-transfer: 8
-    hopper-check: 1
+  hopper-transfer: 8
+  hopper-check: 1
 ```
 
 `hopper-transfer` 控制了漏斗多少 tick 传输一次物品；
 
 `hopper-check` 控制了漏斗一次运输多少物品。
 
-在漏斗特别多的服务器中，合理搭配`hopper-transfer` 和 `hopper-check` 可以降低漏斗占用。(但可能略微影响一些机器的行为，如分类机)
+在漏斗特别多的服务器中，合理搭配`hopper-transfer` 和 `hopper-check` 可以降低漏斗占用。(
+但可能略微影响一些机器的行为，如分类机)
 
 另外，使用更高的 `hopper-check` 能够增加漏斗在单位时间的物品传输效率，
 
 降低同样数量物品的漏斗使用时间，进一步降低漏斗占用。
 
 | 漏斗速度 | 服务器占用 | hopper-transfer | hopper-check |
-| -------- | ---------- | --------------- | ------------ |
-| 50%      | 中低       | 16              | 1            |
-| 100%     | 中高       | 8               | 1            |
-| 100%     | 低         | 16              | 2            |
-| 200%     | 中         | 8               | 2            |
+|------|-------|-----------------|--------------|
+| 50%  | 中低    | 16              | 1            |
+| 100% | 中高    | 8               | 1            |
+| 100% | 低     | 16              | 2            |
+| 200% | 中     | 8               | 2            |
 
 ---
 
@@ -978,7 +998,7 @@ ticks-per:
 
 ## 减少后台垃圾内容
 
-服务端自带一些非常简陋的反作弊，检测玩家是否飞行、过速等，但效果非常差。
+服务端自带一些非常简陋的反作弊，检测玩家是否飞行、超速等，但效果非常差。
 
 特别是服务器出现卡顿的时候，这将在后台进行大量刷屏。如果安装了至少一个反作弊。
 
@@ -1003,6 +1023,12 @@ settings:
   moved-too-quickly-multiplier: 99999
   # 忽略玩家移动过快
 ```
+
+:::tip
+
+[在 1.21.2 以上](https://zh.minecraft.wiki/w/游戏规则/disablePlayerMovementCheck?variant=zh)，你可以使用 `/gamerule disablePlayerMovementCheck true` 关闭移动检测
+
+:::
 
 ---
 

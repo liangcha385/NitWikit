@@ -26,12 +26,12 @@ sidebar_position: 3
 │  ├─poi            // 兴趣点数据
 │  ├─region         // 区块数据
 │  └─stats          // 统计信息
-├─world_nether      // 地狱世界文件夹
-│    └─DIM-1
-│       ├─data      // 末地
-│       ├─entities
-│       ├─poi
-│       └─region
+├─world_nether       // 地狱世界文件夹
+│  └─DIM-1
+│      ├─data
+│      ├─entities
+│      ├─poi
+│      └─region
 └─world_the_end     // 末地世界文件夹
     └─DIM1
         ├─data
@@ -40,7 +40,7 @@ sidebar_position: 3
         └─region
 ```
 
-对于类似 Catserver 的混合服务器，文件夹结构是类似的，基本就多了 mods 文件夹，少了 Bukkit 的下游服务器特有的配置(如 `purpur.yml` 等)。
+对于类似 Catserver 的混合服务器，文件夹结构是类似的，基本就多了 `/mods` 文件夹，少了 Bukkit 的下游服务器特有的配置(如 `purpur.yml` 等)。
 
 :::info
 

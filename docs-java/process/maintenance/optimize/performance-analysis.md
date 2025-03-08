@@ -15,24 +15,15 @@ Spark是一个Minecraft的性能分析器，支持广泛(如 Bukkit，BungeeCord
 
 `官网` :https://spark.lucko.me
 
-`官网下载` :https://spark.lucko.me/download
+`SpigotMC` https://www.spigotmc.org/resources/spark.57242/
 
-<details>
-    <summary>其他相关链接</summary>
+`Modrinth` https://modrinth.com/mod/spark
 
-`文档(英文)` :https://spark.lucko.me/docs
+`GitHub` https://github.com/lucko/spark
 
-`文档(中文)` :https://snowcutieowo.github.io/spark
+`文档(英文)` https://spark.lucko.me/docs
 
-`SpigotMC` :https://www.spigotmc.org/resources/spark.57242/
-
-`Modrinth` :https://modrinth.com/mod/spark
-
-`GitHub` :https://github.com/lucko/spark
-
-`MC百科` :https://www.mcmod.cn/class/4073.html
-
-</details>
+`文档(中文)` https://snowcutieowo.github.io/spark/README.html
 
 :::
 
@@ -42,7 +33,7 @@ Spark是一个Minecraft的性能分析器，支持广泛(如 Bukkit，BungeeCord
 
 1.12.2 和以下混合服优先使用 mod 版本，放入 mods 文件夹。
 
-对于 Purpur Fork 服务器或 Paper 1.21+，默认自带 Spark，无需单独下载。
+对于 Purpur Fork 服务器或 Paper 1.21 #100 之后的构建，默认自带 Spark，无需单独下载。
 
 #### /spark profiler
 
@@ -68,9 +59,9 @@ Spark 中内存占用并非平均内存占用，而是**瞬间内存占用**，�
 
 :::
 
-#### /spark health
+#### /spark healthreport
 
-子命令 health 会产生一份服务器的健康报告，其中包含 TPS、CPU、内存和硬盘的使用情况。
+子命令 healthreport 会产生一份服务器的健康报告，其中包含 TPS、CPU、内存和硬盘的使用情况。
 
 #### /spark tps
 
@@ -78,7 +69,7 @@ Spark 默认会替代服务器的 TPS 输出(但可能被 CMI 等插件覆盖，
 
 ## Timings
 
-Timings是一个 Paper 自带的性能分析器，由于其监听每一个事件，性能开销比较大，
+Timings是一个 Spigot 自带的性能分析器，由于其监听每一个事件，性能开销比较大，
 
 在很多服务器核心(如 Purpur 等)本身也是被移除的，**不推荐**。
 

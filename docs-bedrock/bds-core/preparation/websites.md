@@ -3,24 +3,15 @@ title: 可能用到的网站
 sidebar_position: 1
 ---
 
-:::tip
-本篇文档已完成编写！<br />
-支持后续 PR
-
-# Biggest SUCCESS
-
-作者：[梦涵LOVE](https://github.com/MengHanLOVE1027)
-:::
-
 # 可能用到的网站
 
 开服不能只是从某一网站或者简单百度、Bing、谷歌获取资源，这样获取的资源种类非常贫乏。
 
 以下是一些可供参考的推荐网站：
 
-# MineBBS
+## MineBBS
 
-国内较为知名的综合性 Minecraft 论坛。曾以基岩版开服内容为主，MCBBS 关闭后其 Java 版相关内容丰富了许多。
+国内较为知名的综合性 Minecraft 论坛。主要以基岩版开服内容为主，MCBBS 关闭后其 Java 版相关内容丰富了许多。
 
 <details>
   <summary>点击展开</summary>
@@ -37,13 +28,36 @@ sidebar_position: 1
     </td>
   </tr>
 
-插件板块：https://www.minebbs.com/forums/mcjeplugin/
+插件板块：https://www.minebbs.com/resources/categories/bdserver.38/
 
 同时，本教程在 MineBBS 也有搬运贴：https://www.minebbs.com/threads/nitwikit-geyser.26356/
 
 </details>
 
-# GitHub
+## Bedrinth
+
+由 LeviLDev 创建的专门收集 LeviLamina 和 EndStone 模组或者插件的资源网站。
+
+<details>
+  <summary>点击展开</summary>
+
+  <tr>
+    <td align="center">
+      <a href="https://bedrinth.com/">
+        <img
+          src="https://futrime.github.io/lip/images/logo.webp"
+          width="100px;"
+          alt=""
+        /><br /><sub><b>Bedrinth</b></sub>
+      </a>
+    </td>
+  </tr>
+
+插件板块：https://bedrinth.com/
+
+</details>
+
+## GitHub
 
 全球最大的代码托管平台 **_建议注册账号_**。
 

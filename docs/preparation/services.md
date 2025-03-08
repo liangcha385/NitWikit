@@ -10,139 +10,25 @@ sidebar_position: 5
 
 目前包括
 
-- [笨蛋 AI](https://ai.yizhan.wiki) - AI 聊天，文字生成图片
-- ~~[笨蛋镜像](https://mirror.yizhan.wiki) - 加速网站的访问(为没有 VPN 的人准备)~~ 由于一些特殊原因,已关闭
-- [笨蛋图床](https://image.yizhan.wiki) - 简洁，免费的图床
-- [笨蛋粘贴板](https://paste.yizhan.wiki) - 上传文件/创建 Paste!(不要当网盘)
-- [笨蛋笔记本](https://notepad.yizhan.wiki) - 免费笔记本，支持密码，Markdown 和分享
-- [笨蛋短链](https://url.yizhan.wiki) - 缩短链接
+- [笨蛋 AI](https://ai.8aka.org) - AI 聊天，文字生成图片
+- [笨蛋镜像](https://mirror.imc.rip) - 加速网站的访问(为没有 VPN 的人准备)
+- [笨蛋图床](https://image.8aka.org) - 简洁，免费的图床
+- [日志上传](https://log.8aka.org) - 上传日志
 
 ## 规则
 
 **不要滥用，不要上传违法文件!!!!!**
 
+图床最大上传 20MB 的图片或视频
+
 ## 免费域名
 
-为那些没有域名的可怜人准备的，目前提供:
+我们提供免费的 `pvp.kim` 二级域名,目前不限量注册,支持 CNAME,A,AAAA,SRV
 
-<details>
-<summary>公共域名列表</summary>
-
-- mcfun.us.kg
-- nitwikit.us.kg
-- yizhan.us.kg
-- llf.myredirect.us
-- mc.lookin.at
-- mcfun.findhere.org
-- mcfun.lookin.at
-- nitwikit.myfw.us
-- playmc.lookin.at
-- playmc.myfw.us
-- playmc.rr.nu
-- yizhan.findhere.org
-- yizhan.myfw.us
-- yizhan.rr.nu
-- int.linkpc.net
-- mcpvp.com.mp
-- playmc.cloud-ip.biz
-- playmc.com.mp
-- playmc.myredirect.us
-- pvp.line.pm
-- pvp.findhere.org
-- mcpvp.rr.nu
-- mc.isgre.at
-- pvp.isgre.at
-- xixi.isgre.at
-- mcpvp.blogu.tc
-- xixi.san.tc
-- lilf.dev.tc
-
-</details>
-
-<details>
-<summary>限制注册公共域名</summary>
-
-- wsdj.in
-
-需要群等级50级以上才可以注册
-
-已开启 DNSSEC，允许为子域名开启CF保护，允许为子域名创建 NS 记录到别的DNS(支持 DnsPod)，子域名字符支持所有字符（前提是DNS支持）
-
-</details>
-
-:::tip
-
-你也可以将你的闲置域名分出来一个子域名捐赠给我们，不胜感激
-
-:::
-
-然后前往[NitWikit-Domain申请](https://github.com/lilingfengdev/NitWikit-Domain/issues/new?assignees=&labels=request&projects=&template=request.yml&title=%5B%E7%94%B3%E8%AF%B7%5D%3A+),请确保你需要的子域名满足以下条件
-
-- 只有数字和字母
-- 没被别人用
-
-然后静待机器人回复
-
-:::warning
-
-不保证这些域名永久可用,有可能忘记续订而更换域名
-
-:::
+> 获得: https://domain.8aka.org
 
 ## 下载镜像
 
 对于文档中一些下载慢的资源可以申请提供下载镜像,如果已有镜像,在经过安全性评估后会在文档中提供,如果没有,会提供笨蛋文档维护的镜像
 
-官方下载镜像域名`dl.yizhan.wiki`,目前会重定向到`dl.imc.rip`(基于 Cloudflare R2)
-
-## 机器人命令
-
-在群内发送消息即可使用！
-
-![](_images/机器人命令/mcping.png)
-
-### `mcping`
-
-打印 mc 服务器信息。
-
-用法：
-
-```text
-mcping <服务器地址>
-```
-
-### 消息回复
-
-消息回复关键词要加前缀 `#`
-
-![](_images/机器人命令/lezi_wiki.png)
-
-下方是可用的关键词。
-
-### `乐子文档`
-
-返回乐子文档的地址和仓库。
-
-### `开服教程`
-
-返回本文档的地址和仓库。
-
-### `帮助`
-
-返回 https://nitwikit.yizhan.wiki/services/
-
-### `正确提问`
-
-返回消息 https://nitwikit.yizhan.wiki/start/%E5%90%91%E5%A4%A7%E4%BD%AC%E6%B1%82%E5%8A%A9
-
-### `搜索`
-
-返回消息 https://nitwikit.yizhan.wiki/search?q=
-
-### `核心`
-
-返回消息
-
-📦 单端 https://nitwikit.yizhan.wiki/Java/start/server-core-choose
-
-📦 跨服端 https://nitwikit.yizhan.wiki/Java/advance/cross-server/server-core-choose
+官方下载镜像域名`dl.8aka.org`

@@ -137,19 +137,15 @@ above-bedrock-nether-building: false
 
 **`show-coordinates`**：是否向玩家显示坐标
 
-**`above-bedrock-nether-building`**：开启后你将被允许在下届高度 127 以上建造，缺点是整个下界中雾的颜色不再可变，将一直是红色(GeyserExtras 可以解决这个问题)
-
-:::warning
-
-若你在使用模组端 Geyser，那接下来的教程就和你无关了(包括进阶)，因为模组端 Geyser 根本不能实现这些功能
-
-:::
+**`above-bedrock-nether-building`**：开启后你将被允许在下界高度 127 以上建造，缺点是整个下界中雾的颜色不再可变，将一直是红色(GeyserExtras 可以解决这个问题)
 
 ## floodagte
 
 为进一步兼容，你需要安装 [floodgate](https://geysermc.org/download#floodgate),[MCSL下载镜像](https://sync.mcsl.com.cn/core/Floodgate)
 
-floodgate 可作为一个插件安装到 Spigot 及其分支的核心上或 BungeeCord、Velocity 之类的代理上
+Mod 服务器请安装[Floodgate-Modded](https://modrinth.com/mod/floodgate),适用于 Mod 的 Floodgate
+
+floodgate 可作为一个插件/Mod装到 Spigot 及其分支的核心上或 BungeeCord、Velocity 之类的代理上
 群组服/独立版 Geyser 的 Floodgate 安装需要进行一些额外步骤，请跟随教程完成
 
 floodgate 是一个允许 **Minecraft 基岩版** 帐号加入 **Minecraft Java版** 正版服务器而无需其 **正版账号** 的混合模式插件
@@ -256,7 +252,13 @@ send-floodgate-data: true
 
 ## 笨蛋脚本
 
-下载[脚本](https://dl.yizhan.wiki/windows-latest/geyser-egg.exe)，为你自动生成 Geyser 环境，免于配置
+:::tip
+
+该脚本只适合单端,不适合群组服
+
+:::
+
+下载[脚本](https://script.8aka.org/geyser-egg)，为你自动生成 Geyser 环境，免于配置
 
 即使不用配置，你仍然需要看完 wiki，**明白你在做什么**
 

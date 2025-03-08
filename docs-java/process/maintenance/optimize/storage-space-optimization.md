@@ -15,7 +15,7 @@ sidebar_position: 4
 
 ### 使用数据库
 
-合理使用数据库可以降低服务器硬盘占用。详见[数据库相关](https://nitwikit.yizhan.wiki/database)
+合理使用数据库可以降低服务器硬盘占用。详见[数据库相关](https://nitwikit.8aka.org/database)
 
 ## 备份空间优化
 
@@ -27,7 +27,7 @@ sidebar_position: 4
 可设置黑名单不备份某些文件，FTP 远程备份支持
 
 [serverbackup](https://www.spigotmc.org/resources/server-backup-ingame-dropbox-ftp-backup-1-8-1-20-multithreaded.79320/)
-可支持动态备份(即只备份最近变更过的文件)，占用空间更小
+可支持增量备份(即只备份最近变更过的文件)，占用空间更小
 
 ## 存档存储空间优化
 
@@ -39,48 +39,50 @@ Minecraft 默认的区块格式是 ANVIL ，但是这个区块格式有很多弊
 
 ### 删除过时区块
 
-有一个插件可以做到，但是忘了名字
+[Regionerator](https://github.com/Jikoo/Regionerator) 会自动删除未使用的区块,但请注意,该插件是自动的,并且不可撤销
 
-TODO
+不支持 Linear
 
 ### 更高效的储存方式
 
+#### Linear
+
 :::danger
 
-Linear不适合玩家基数非常大/服务器经常滞后/压缩比较大(推荐默认1-5)/ CPU 核心数目小/服务器硬盘空间足够大的服务器。
+Linear不适合玩家基数非常大/服务器经常滞后/ CPU 核心数目小/服务器硬盘空间足够大的服务器。
 
 换句话来说，只有玩家并不多但需要较大的地图且 VPS 默认给的硬盘较小时才应该考虑此格式。
 
-如果强行在以上不适合使用 Linear 的服务器使用时可能会出现 **局部大规模回档** 的情况，请注意。
-
-这应该是最后才应该考虑的方案。
+Leaf/Luminol 等核心最新版已应用修复补丁,虽然性能会受到影响,但不会出现回档情况(自己作死断电那当然没办法)
 
 :::
 
 此格式是由著名的 Xymb 大佬开发，相比于 ANVIL ，可以节省巨大的空间
 
-主世界可以节省大约 50% 的空间，末地大约为 90% ，且使用现代的 zstd 压缩，可以获得更快的加载和保存速度
+主世界可以节省大约 50% 的空间，末地大约为 90% ，且使用现代的 zstd & lz4 压缩，可以获得更快的加载和保存速度。
 
-#### 转换区域格式
+##### 转换区域格式
 
 使用之前你需要将 ANVIL 转换成 Linear 区域格式，如果你使用的是 Leaves ，你可以在服务端内部自动转换。
 
-[转换工具](https://github.com/xymb-endcrystalme/LinearRegionFileFormatTools) ，转换非常简单你只需要看着教程做就行(记得做备份)
+[转换工具](https://github.com/xymb-endcrystalme/LinearRegionFileFormatTools) ，转换非常简单你只需要看着教程做就行(
+记得做备份)
 
-#### 开启区域格式
+##### 开启区域格式
 
 目前，支持线性区域格式的仅有 LinearPurpur ， LinearPaper ， Leaves ， Leaf ， Kaiiju (还有一堆Fork)，
 
 开启教程不多说，你只需要查看 Wiki 就行。
 
-#### 不兼容的插件
+##### 不兼容的插件
 
-ServerBackup 一款备份插件，会由于找不到mca文件报错。
-目前已知不兼容线性区域的格式的插件极少无比，已知的有大部分在线网页地图浏览程序，以及Residence部分不兼容(感谢z大神的优雅代码，当传送到一个未加载区块的领地时会崩溃)
+目前已知不兼容线性区域的格式的插件极少无比: ServerBackup 一款备份插件，会由于找不到mca文件报错。
+，大部分在线网页地图浏览程序，以及Residence部分不兼容(
+感谢z大神的优雅代码，当传送到一个未加载区块的领地时会崩溃),Regionerator 不兼容
 
-#### 测试结果
+##### 测试结果
 
-感谢 HaHaWTH 提供的测试结果，测试内容为使用 Chunky 加载半径 1000 格的方块并保存，测试核心为 Leaf ，实际结果可能与测试结果有出入
+感谢 HaHaWTH 提供的测试结果，测试内容为使用 Chunky 加载半径 1000 格的方块并保存，测试核心为 Leaf ，实际结果可能与测试结果有出入。
 
 | 世界   | ANVIL(原版格式) | Linear(压缩比为一) | Linear(压缩比为六，默认压缩比) | Linear(压缩比为22)(最大压缩比) |
 |------|-------------|---------------|---------------------|-----------------------|
@@ -95,6 +97,10 @@ ServerBackup 一款备份插件，会由于找不到mca文件报错。
 不推荐压缩比开到最大，推荐值为 6
 
 :::
+
+#### Slime
+
+请查看[Slime 区域格式](https://nitwikit.8aka.org/Java/advance/slime-world)
 
 ## 其他
 

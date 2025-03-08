@@ -44,7 +44,9 @@ One man’s constant is another man’s variable. — Alan Perlis
 
 `Bukkit` https://dev.bukkit.org/projects
 
-`PaperMC` https://hangar.papermc.io
+`SpigotMC` https://www.spigotmc.org
+
+`Hangar` https://hangar.papermc.io
 
 `Modrinth` https://modrinth.com
 

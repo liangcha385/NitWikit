@@ -1,4 +1,5 @@
 ---
+title: MMOItems
 sidebar_position: 1
 ---
 
@@ -7,8 +8,6 @@ sidebar_position: 1
 :::info
 
 `SpigotMC` https://www.spigotmc.org/resources/.39267/
-
-`Modrinth` https://modrinth.com/plugin/serverutils
 
 `GitLab` https://gitlab.com/phoenix-dvpmt/mmoitems
 

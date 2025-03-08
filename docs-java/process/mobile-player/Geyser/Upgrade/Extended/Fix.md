@@ -18,7 +18,7 @@ sidebar_position: 2
 
 :::warning
 
-支持版本: 1.14-1.19/1.20.5
+支持版本: 1.14-1.21.1
 
 :::
 
@@ -67,19 +67,18 @@ GeyserOptionalPack是一个可选资源包
 - 发光箭实体纹理 (没有实体描边渲染(基岩版本身就没有)，只有箭矢纹理)
 - 提供超过记分板字符限制的绕过方式
 - 隐藏在Java版中没有的UI元素，例如：
-  - 制图台中的文本输入字段
-  - 创造模式下的2x2工作台
-  - 命令方块菜单中的时钟延迟和重命名字段
-  - Java版中不存在的结构方块选项
+    - 制图台中的文本输入字段
+    - 创造模式下的2x2工作台
+    - 命令方块菜单中的时钟延迟和重命名字段
+    - Java版中不存在的结构方块选项
 
 ## 箱子优化
 
-BedrockChestUI是一个用于实现自定义基岩版箱子UI行数的插件 ，由于基岩版原生不支持1，2，4，5行的箱子，所以本插件基于 ProtocolLib + 基岩版资源包实现 。
-此插件需要Floodgate和ProtocolLib作为前置，支持Minecraft版本 1.17.1-1.19.4
+基岩版原版无法看到 9x1,9x2 等大小的箱子,GeyserMoreRows
+可以解决这个问题,[GitHub](https://github.com/GeyserExtensionists/GeyserMoreRows),需要自行构建,不会可以加入 zim 的
+discord 下载预构建
 
-[下载](https://gitee.com/xi-bohan/BedrockChestUI/releases/tag/BedrockChestUI)
-
-将```ChstomChest0.2.mcpack```安装到```packs```，```BedrockChestUI-1.0.5.jar```是插件，都需要安装
+下载后还需安装[基岩资源包](https://raw.githubusercontent.com/GeyserExtensionists/GeyserMoreRows/refs/heads/main/MorerowsPack.mcpack)
 
 ## 更好的第三人称
 
@@ -122,4 +121,18 @@ BedrockChestUI是一个用于实现自定义基岩版箱子UI行数的插件 ，
 
 [项目地址](https://github.com/GeyserExtras/GeyserExtras)
 
-[汉化地址](https://github.com/lilingfengdev/GeyserExtrasCN)
+[汉化下载](https://hangar.papermc.io/Guardian1l/GeyserExtras_CNN)
+
+## Geyser Recipe Fix
+
+允许Geyser玩家使用铁砧和锻造台以及自定义菜单,[下载](https://modrinth.com/plugin/geyser-recipe-fix)
+
+你还需要安装 [PacketEvent](https://modrinth.com/plugin/packetevents)
+
+## 展示实体修复
+
+正常情况下,展示实体在基岩版无法显示,GeyserDisplayEntity
+可以解决这个问题,[GitHub](https://github.com/GeyserExtensionists/GeyserDisplayEntity),需要自行构建,不会可以加入 zim 的
+discord 下载预构建
+
+该插件对于 IA,ORX 这些插件特别好使,让基岩版玩家不用再看口口了

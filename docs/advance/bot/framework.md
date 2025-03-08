@@ -3,108 +3,113 @@ title: 机器人框架
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # 机器人框架
 
-## QQ机器人
+## 第三方机器人框架
 
-:::danger
+<Tabs queryString="qqbot">
+<TabItem value="LLOneBot" label="LLOneBot">
 
-请一定要使用小号来搭建 QQ 机器人，否则如果登录不成功或是成功后被检测，将有大概率导致封号。
+| LLOneBot | ![](https://img.shields.io/badge/状态-积极维护-green?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/LLOneBot/LLOneBot) \| [文档站](https://llonebot.github.io/zh-CN/) |
+| 作者 | [LLOneBot](https://github.com/LLOneBot) |
+| 介绍 | LiteLoaderQQNT 插件，实现 OneBot 11 和 Satori 协议，用于 QQ 机器人开发 |
+| 下载 | [Github](https://github.com/LLOneBot/LLOneBot/releases) 或者 [LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT) 插件市场下载 |
 
-使用如 go-cqhttp 的 [签名服务](https://mirai.mamoe.net/topic/2373/%E5%85%B3%E4%BA%8E%E7%AD%BE%E5%90%8D%E6%9C%8D%E5%8A%A1) 不稳定并且非常容易导致封号。
-推荐使用 LLOneBot 这类通过 hook 官方客户端而跳过使用签名服务登录的方案。
+</TabItem>
+<TabItem value="NapCatQQ" label="NapCatQQ">
 
-:::
+| NapCatQQ | ![](https://img.shields.io/badge/状态-积极维护-green?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/NapNeko/NapCatQQ) \| [文档站](https://napneko.github.io/) |
+| 作者 | [NapNeko](https://github.com/NapNeko) |
+| 介绍 | NapCatQQ 是现代化的基于 NTQQ 的 Bot 协议端实现 |
+| 下载 | [Github](https://github.com/NapNeko/NapCatQQ/releases) 或者 [LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT) 插件市场下载 |
 
-控制 QQ 号的部分叫就是框架，可分为三种原理：
+</TabItem>
+<TabItem value="Lagrange.OneBot" label="Lagrange.OneBot">
 
-1. **接入 QQ 官方的机器人框架**，这需要每个使用这样框架的用户都必须在QQ官方申请机器人并进行审核，而且功能存在限制
-2. **破解 QQ 客户端** 来实现操作 QQ 号，这种方式目前最为稳定，也是最推荐的，唯一的缺点就是占用的系统资源较多
-3. 直接编写软件伪装成 QQ 客户端直接连接 QQ 官方服务器，又叫 **协议库**。这样的软件占用资源很低，但是目前由于被腾讯官方针对处理，导致非常不稳定。
+| Lagrange.OneBot | ![](https://img.shields.io/badge/状态-积极维护-green?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/LagrangeDev/Lagrange.Core) \| [文档站](https://lagrangedev.github.io/Lagrange.Doc/Lagrange.OneBot/) |
+| 作者 | [LagrangeDev](https://github.com/LagrangeDev) |
+| 介绍 | Lagrange.Core 是一个开源的 NTQQ 协议实现，实现了 OneBot V11 的通信协议, 可以和主流 Bot 框架进行通信 |
+| 下载 | [Github](https://github.com/LagrangeDev/Lagrange.Core/releases) |
 
-### LiteLoaderQQNT + LLOneBot
+</TabItem>
+<TabItem value="Overflow" label="Overflow">
 
-|原理|破解 QQ 客户端|
-|---|:---|
+| Overflow | ![](https://img.shields.io/badge/状态-积极维护-green?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/MrXiaoM/overflow) \| [文档站](https://mirai.mrxiaom.top/docs/UserManual) |
+| 作者 | [MrXiaoM](https://github.com/MrXiaoM) |
+| 介绍 | Overflow 是 mirai-core-api 的实现，对接 OneBot 11 标准，实现 mirai 的无缝迁移 |
+| 下载 | [官网下载](https://mirai.mrxiaom.top/) |
 
-LiteLoaderQQNT 是 [利用 NTQQ 特性](https://github.com/Mrs4s/go-cqhttp/issues/2471) 实现的 QQ **插件加载器**。
-它本身并不具备QQ机器人功能，你需要**为其安装 LLOneBot 插件**才能开始使用 QQ 机器人功能。
+</TabItem>
+</Tabs>
 
-:::warning
+## 接入QQ官方接口的机器人框架
 
-根据先前其他该领域开发者的经历，该软件开发者不建议任何人公开宣传此软件。如果你使用了 LLOneBot，请勿在任何群聊发送可以看出你使用了非官方 QQ 的截图。
+<Tabs queryString="qqbot">
+<TabItem value="Gensokyo" label="Gensokyo">
 
-:::
+| Gensokyo | ![](https://img.shields.io/badge/状态-积极维护-green?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/Hoshinonyaruko/Gensokyo) |
+| 作者 | [Hoshinonyaruko](https://github.com/Hoshinonyaruko) |
+| 介绍 | 基于 OneBot QQ官方机器人Api Golang 原生实现 |
+| 下载 | [Github](https://github.com/Hoshinonyaruko/Gensokyo/releases) |
 
-前往 [LiteLoaderQQNT官网](https://liteloaderqqnt.github.io/) ，根据其教程下载安装该框架。
+</TabItem>
+</Tabs>
 
-安装完成后，根据 [LiteLoaderQQNT 文档安装插件方法](https://liteloaderqqnt.github.io/guide/plugins.html) 为框架安装插件：[LLOneBot](https://github.com/LLOneBot/LLOneBot/tree/main)。
-如果你已经在使用该框架并且已安装了 [插件列表查看](https://github.com/ltxhhz/LL-plugin-list-viewer/tree/main) 插件，也可以直接使用该插件进行安装。
+## 已停止更新的机器人框架
 
-安装完成后，进入 QQ 设置，在侧边栏中找到 LLOneBot 点击切换到其设置页，然后 **根据机器人给出的文档** 进行配置。
+<Tabs queryString="qqbot">
+<TabItem value="Shamrock" label="Shamrock">
 
-### Lagrange(拉格朗日)
+| Shamrock | ![](https://img.shields.io/badge/状态-停止维护-red?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/whitechi73/OpenShamrock) \| [文档站](https://whitechi73.github.io/OpenShamrock/) |
+| 作者 | [whitechi73](https://github.com/whitechi73) |
+| 介绍 | 基于 Lsposed（Non-Riru） 实现 Kritor 标准的 QQ 机器人框架 |
+| 下载 | [Github](https://github.com/whitechi73/OpenShamrock/releases) |
 
-|原理|协议库|
-|---|:---|
+</TabItem>
+<TabItem value="chronocat" label="chronocat">
 
-[参见此处](https://docs.qq.com/doc/DQ2N2b0JqeUhmWUVa)
+| chronocat | ![](https://img.shields.io/badge/状态-不再积极维护-yellow?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/chrononeko/chronocat) |
+| 作者 | [chrononeko](https://github.com/chrononeko) |
+| 介绍 | 模块化的 Satori 框架 |
+| 下载 | [Github](https://github.com/chrononeko/chronocat/releases) |
 
-### [Gensokyo](https://github.com/Hoshinonyaruko/Gensokyo)
+</TabItem>
+<TabItem value="go-cqhttp" label="go-cqhttp">
 
-|原理|官方 API|
-|---|:---|
+| go-cqhttp | ![](https://img.shields.io/badge/状态-停止维护-red?style=for-the-badge) \| [停更公告地址](https://github.com/Mrs4s/go-cqhttp/issues/2471) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/Mrs4s/go-cqhttp) \| [文档站](https://docs.go-cqhttp.org/) |
+| 作者 | [Mrs4s](https://github.com/Mrs4s) |
+| 介绍 | 基于 Mirai 以及 MiraiGo 的 OneBot Golang 原生实现 |
+| 下载 | [Github](https://github.com/Mrs4s/go-cqhttp/releases) |
 
-此框架由于是接入 QQ 官方频道机器人 API，使用稳定且有腾讯官方的支持。
+</TabItem>
+<TabItem value="Mirai" label="Mirai">
 
-:::warning
+| Mirai | ![](https://img.shields.io/badge/状态-不再积极维护-yellow?style=for-the-badge) |
+| --- | --- |
+| 相关链接 | [Github 仓库](https://github.com/mamoe/mirai) \| [官方论坛](https://mirai.mamoe.net/) \| [用户手册](https://github.com/mamoe/mirai/blob/dev/docs/UserManual.md) |
+| 作者 | [mamoe](https://github.com/mamoe) |
+| 介绍 | mirai 是一个在全平台下运行，提供 QQ Android 协议支持的高效率机器人库 |
+| 下载 | [Github](https://github.com/iTXTech/mirai-console-loader/releases) |
 
-由于官方限制，频道机器人无法主动发送消息，在被 **不是机器人的普通用户** @后可自由发送消息，持续 5 分钟。当超过 5 分钟时，机器人会提示"回复时间结束"。
-<!--https://gitee.com/dlcn/dlscq/wikis/%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6/%E5%AE%98%E6%96%B9%E9%A2%91%E9%81%93%E6%9C%BA%E5%99%A8%E4%BA%BA-->
-:::
+</TabItem>
+</Tabs>
 
-### [OpenShamrock](https://github.com/whitechi73/OpenShamrock)
-
-|原理|破解 QQ 客户端|
-|---|:---|
-
-OpenShamrock 是运行在安卓手机 QQ 上的 OneBot 框架，相当于安卓版的 LiteLoaderQQNT + LLOneBot。
-
-也就是说，你必须已经拥有一台 **和服务器连接到同一局域网下** 的安卓手机。有两种方式来部署一台这样的安卓手机：
-
-1. 使用闲置的旧手机
-2. 服务器内存足够的情况下部署安卓模拟器
-
-OpenShamrock的搭建教程待补充
-
-### [Mirai](https://mirai.mamoe.net/)
-
-|原理|协议库|
-|---|:---|
-
-<!--[Mirai 论坛](https://mirai.mamoe.net/)-->
-
-:::danger
-
-Mirai 原生由于本身为协议库原理，近期因不可抗力导致难以登录并且99%封号冻结。推荐配合下文的 Overflow 使用。
-
-:::
-
-如果发现 Mirai 的 **帐号登录** 对于你的服务器来说难以使用和维护，可以使用 [Overflow(OneBot)](https://github.com/MrXiaoM/Overflow)
-将 Mirai 接入其他 OneBot 框架，而不是直接通过 Mirai 登录。
-
-**[Overflow 使用方法](https://github.com/MrXiaoM/Overflow/blob/main/docs/UserManual.md)**
-
-配置 Websocket 链接时，在正向 ws 和反向 ws 之间选择一种即可。
-
-:::info
-
-推荐使用 [官网一键打包整合包](https://mirai.mrxiaom.top/#get-started) + [LLOneBot](#liteloaderqqnt--llonebot) 的方式部署。
-
-:::
-
-<!--[Overflow 主页](https://github.com/MrXiaoM/Overflow)-->
-
-<!--## Kook机器人-->
-
-<!--## Telegram机器人-->

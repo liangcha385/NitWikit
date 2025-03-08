@@ -1,14 +1,15 @@
 ---
+title: 经济插件
 sidebar_position: 3
 ---
 
 # 经济插件
 
-这里指以 [Vault](vault.md) 为前置的为服务器提供经济的 **一类插件**
+这里指以 [Vault](Vault/vault.md) 为前置的为服务器提供经济的 **一类插件**
 
 如 XConomy
 
-# XConomy
+## XConomy
 
 :::info
 
@@ -28,7 +29,7 @@ sidebar_position: 3
 
 > Vault 是这些经济插件的前置，但本身并不提供经济
 
-## 连接数据库
+### 连接数据库
 
 如果你使用的是**MySQL 8**，并且无法正常连接到数据库，请下载 [DatabaseDrivers](https://github.com/YiC200333/DatabaseDrivers/releases) (1.17.X 以上版本服务器不需要)
 

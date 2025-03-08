@@ -9,7 +9,7 @@ sidebar_position: 4
 
 ## 笨蛋脚本
 
-下载此[脚本](https://dl.yizhan.wiki/windows-latest/generate-script.exe)，回答几个问题就可以为你自动生成启动脚本!!
+下载此[脚本](https://script.8aka.org/generate-script)，回答几个问题就可以为你自动生成启动脚本!!
 
 <details>
 <summary>直接在终端里敲命令来启动?</summary>
@@ -68,7 +68,7 @@ java -Xms2G -Xmx2G -jar 核心名.jar --nogui
 
 ## 最初的开启
 
-双击启动脚本后，大概率会卡在你会看到 Downloading mojang_x.x.x.jar，请耐心等待
+双击启动脚本后，大概率会卡在你会看到 `Downloading mojang_x.x.x.jar`，请耐心等待
 
 一旦下载完成，他会提示：
 
@@ -129,6 +129,13 @@ set http_proxy=http://127.0.0.1:7890
 set https_proxy=http://127.0.0.1:7890
 ```
 
+如果在 Linux 下则是这样的：
+
+```bash
+export HTTP_PROXY=http://127.0.0.1:7890
+export HTTPS_PROXY=http://127.0.0.1:7890
+```
+
 其中 `7980` 是你的科学上网软件设置的端口，若有不同，请替换。
 
 注：输入之后仅对这个命令行窗口有效，`开启新的 / 关闭它` 之后要重新输入。
@@ -138,6 +145,8 @@ set https_proxy=http://127.0.0.1:7890
 ### 中文乱码
 
 如果你用的是Windows，你需要在启动脚本**最前面**加上`chcp 65001`
+
+如上面的方法无效，检查你的系统区域设置是否为中国和中文语言包是否下载。
 
 比如你原来的启动脚本长这样
 
@@ -166,7 +175,7 @@ java -Xms2G -Xmx2G -jar server.jar --nogui
 
 ![](_images/5.png)
 
-此时，你只需要把`xxx.jar.jar`改成`xxx.jar`就可以正常启动了
+此时，你只需要把 `xxx.jar.jar` 改成 `xxx.jar` 就可以正常启动了
 
 ### Invalid initial heap size: -Xms
 

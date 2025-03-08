@@ -1,4 +1,5 @@
 ---
+title: Authme
 sidebar_position: 2
 ---
 
@@ -10,7 +11,7 @@ sidebar_position: 2
 
 `SpigotMC` https://www.spigotmc.org/resources/.6269/
 
-`PaperMC` https://hangar.papermc.io/0D00_0721/AuthMeReReloaded
+`Hangar` https://hangar.papermc.io/0D00_0721/AuthMeReReloaded
 
 `Modrinth` https://modrinth.com/plugin/authmereloaded
 
@@ -34,7 +35,7 @@ sidebar_position: 2
 
 [AuthMeBungee](https://www.spigotmc.org/resources/.50219/)
 
-[AuthMeVelocity](https://modrinth.com/plugin/authmevelocity)
+[AuthMeVelocity](../../../cross-server/plugin/velocity.md)
 
 ## 扩展
 

@@ -2,17 +2,12 @@
 title: LeviLamina 安装教程
 sidebar_position: 1
 ---
-:::info
-
-作者：[星凌QAQ](https://github.com/XingLingQAQ)
-
-:::
 
 # LeviLamina 安装教程
 
 ## 方法零: 使用笨蛋脚本
 
-首先下载[安装脚本](https://dl.yizhan.wiki/windows-latest/liteloaderbds-install.exe)，下载完后右键**以管理员启动**即可
+首先下载[安装脚本](https://script.8aka.org/liteloaderbds-install)，下载完后右键**以管理员启动**即可
 
 :::tip
 
@@ -60,7 +55,12 @@ lip config GoModuleProxyURL <url>
 lip config GitHubMirrorURL <url>
 ```
 
-来配置镜像
+来配置镜像,官方给的镜像
+
+```shell
+lip config GoModuleProxyURL https://goproxy.cn
+lip config GitHubMirrorURL https://github.bibk.top
+```
 
 :::
 

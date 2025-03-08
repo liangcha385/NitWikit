@@ -1,4 +1,5 @@
 ---
+title: PlayerPoints
 sidebar_position: 4
 ---
 
@@ -11,6 +12,10 @@ sidebar_position: 4
 `SpigotMC` https://www.spigotmc.org/resources/playerpoints.80745/
 
 `GitHub` https://github.com/Rosewood-Development/PlayerPoints
+
+`文档(英文)` https://github.com/Rosewood-Development/PlayerPoints/wiki
+
+`文档(中文)` https://snowcutieowo.github.io/PlayerPoints/README.html
 
 `插件百科` https://mineplugin.org/PlayerPoints
 

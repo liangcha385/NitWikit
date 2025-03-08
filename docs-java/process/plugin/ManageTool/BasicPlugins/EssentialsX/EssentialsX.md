@@ -3,17 +3,34 @@ title: EssentialsX
 sidebar_position: 1
 ---
 
+<!--markdownlint-disable line-length-->
+
 # 概览
+
+![](_images/banner.png)
+
+EssentialsX 是一个基于 Spigot 服务端的基础插件，为从大到小的服务器提供核心功能。这些功能包括：
+
+- **玩家可以自由设置家**
+- 服务器**传送**或给玩家提供**物品套组**，可以设置跨世界或单独世界。
+- 玩家与玩家间的**私有消息，传送，发送传送请求**
+- 玩家自定义**昵称**
+- 很多的管理员工具包括**踢出服务器，临时禁止登陆服务器、禁言与监禁**
+- 内建经济系统，包括**木牌商店、付费执行命令和完全的 Vault 支持**
+
+此外，EssentialsX 的选择模块提供了更多综合的功能如聊天、世界保护、GeoIP查找还有更多……请前往 [模块故障](https://github.com/TecoStudio/EssentialsX-Wiki-zh_CN/wiki/1.3---%E6%A8%A1%E5%9D%97%E6%95%85%E9%9A%9C) 部分阅读更多内容。
+
+## 链接
 
 :::info
 
-`官网` https://essentialsx.net/
+`官网` https://essentialsx.net
 
 `Bukkit` https://dev.bukkit.org/projects/essentialsx
 
 `SpigotMC` https://www.spigotmc.org/resources/.9089
 
-`PaperMC` https://hangar.papermc.io/EssentialsX/Essentials
+`Hangar` https://hangar.papermc.io/EssentialsX/Essentials
 
 `Modrinth` https://modrinth.com/plugin/essentialsx
 
@@ -23,7 +40,7 @@ sidebar_position: 1
 
 `文档(英文)` https://essentialsx.net/wiki/Home.html
 
-`文档(中文)` https://tecostudio.github.io/EssentialsX-Wiki-zh_CN
+`文档(中文)` https://docs.tecostudio.cn/EssentialsX
 
 `插件百科` https://mineplugin.org/EssentialsX
 
@@ -73,3 +90,7 @@ Essentials插件分为两个版本：
 [Essentials MySQL Storage Extension](https://www.spigotmc.org/resources/.25673/)
 
 一个付费插件，为 Essentials 的带来了 MySQL 支持
+
+## Bstats
+
+[![](https://bstats.org/signatures/bukkit/EssentialsX.svg)](https://bstats.org/plugin/bukkit/EssentialsX/858)
